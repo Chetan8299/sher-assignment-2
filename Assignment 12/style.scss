@@ -59,8 +59,21 @@ html {
     gap: $gap;
 }
 
+@mixin flex-center($gap: 0) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap;
+}
+
+@mixin h1-style($size: 2.5rem) {
+    font-weight: 200;
+    font-size: $size;
+    text-transform: uppercase;
+}
+
 section {
-  max-width: 1600px;
+    max-width: 1600px;
 }
 
 main {
@@ -93,14 +106,9 @@ main {
             }
 
             .text {
-                display: flex;
-                flex-direction: column;
-                gap: 0.7rem;
-
+                @include flex-column(0.7rem);
                 h1 {
-                    font-weight: 200;
-                    font-size: 2.5rem;
-                    text-transform: uppercase;
+                    @include h1-style();
                 }
 
                 p {
@@ -118,6 +126,208 @@ main {
                     padding: 0.7rem 1rem;
                     border-radius: 0.5rem;
                 }
+            }
+        }
+    }
+
+    section.view2 {
+        @include flex-column(1rem);
+        width: 100%;
+        padding: 1rem;
+
+        .top,
+        .bottom {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+
+            .element {
+                text-align: center;
+                @include flex-column(0.5rem);
+
+                small {
+                    opacity: 0.6;
+                }
+                h2 {
+                    font-size: 3rem;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+
+    section.view3 {
+        width: 100%;
+        padding: 1rem;
+        @include flex-column(1rem);
+
+        .top {
+            width: 100%;
+
+            img {
+                width: 100%;
+                border-radius: 0.7rem;
+            }
+        }
+
+        .bottom {
+            @include flex-column(3rem);
+            background-color: #1e1e1e;
+            width: 100%;
+            border-radius: 0.7rem;
+            padding: 1.5rem;
+
+            .text {
+                @include flex-column(0.7rem);
+                h1 {
+                    @include h1-style();
+                }
+
+                p {
+                    font-weight: 200;
+                    opacity: 0.6;
+                    line-height: 1.5;
+                    font-size: 1.2rem;
+                    font-family: satoshi-lt;
+                    display: inline-flex;
+                }
+            }
+        }
+
+        .bottom > p {
+            text-transform: uppercase;
+        }
+    }
+
+    section.view4 {
+        width: 100%;
+        padding: 0rem 1rem 1rem 1rem;
+
+        @include flex-column(1rem);
+
+        .top {
+            width: 100%;
+            img {
+                width: 100%;
+                border-radius: 0.7rem;
+            }
+        }
+
+        .bottom {
+            @include flex-column(3rem);
+            background-color: #1e1e1e;
+            width: 100%;
+            border-radius: 0.7rem;
+            padding: 1.5rem;
+
+            .text {
+                @include flex-column(0.7rem);
+
+                h1 {
+                    @include h1-style();
+                }
+
+                p {
+                    font-weight: 200;
+                    opacity: 0.6;
+                    line-height: 1.5;
+                    font-size: 1.2rem;
+                    font-family: satoshi-lt;
+                    display: inline-flex;
+                }
+            }
+        }
+
+        .bottom > p {
+            text-transform: uppercase;
+        }
+    }
+
+    section.view5 {
+        width: 100%;
+        padding: 1rem;
+        @include flex-column(1rem);
+
+        .top {
+            padding: 1rem;
+            h1 {
+                @include h1-style();
+            }
+
+            button {
+                display: none;
+            }
+        }
+
+        .bottom {
+            @include flex-column(1rem);
+            .card {
+                width: 100%;
+                aspect-ratio: 1/1;
+                background-size: cover;
+                border-radius: 0.7rem;
+                @include flex-column();
+                justify-content: space-between;
+                padding: 1rem;
+
+                .card-top {
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    gap: 1rem;
+                }
+
+                .card-bottom,
+                .icon {
+                    background-color: #54525269;
+                    backdrop-filter: blur(5px);
+                    padding: 0.5rem;
+                    border-radius: 0.7rem;
+                    border: 1px solid rgba(128, 127, 127, 0.47);
+                }
+                .icon {
+                    border-radius: 50%;
+                    cursor: pointer;
+                    width: 10%;
+                    aspect-ratio: 1/1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all ease 0.3s;
+                    i {
+                        font-size: 1.2rem;
+                    }
+                }
+                .icon:hover {
+                    border-color: rgb(204, 201, 201);
+                }
+                .card-bottom {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    text-transform: uppercase;
+                    padding: 1rem;
+
+                    h1 {
+                        font-size: 1.4rem;
+                        font-family: chillax-lt;
+                    }
+
+                    h2 {
+                        font-size: 1rem;
+                        font-family: chillax-lt;
+                    }
+                }
+            }
+
+            .card:nth-child(1) {
+                background-image: url(./assets/arlene.webp);
+            }
+            .card:nth-child(2) {
+                background-image: url(./assets/bessie.webp);
+            }
+            .card:nth-child(3) {
+                background-image: url(./assets/marvin.webp);
             }
         }
     }
@@ -145,10 +355,109 @@ main {
                     }
 
                     p {
-                      font-size: 1.3rem;
-                      width: 80%;
+                        font-size: 1.3rem;
+                        width: 80%;
                     }
                 }
+            }
+        }
+
+        section.view2 {
+            flex-direction: row;
+            padding: 2.5rem 1rem;
+            .top,
+            .bottom {
+                .element {
+                    small {
+                        opacity: 0.6;
+                    }
+                    h2 {
+                        font-size: 3.8rem;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+
+        section.view3 {
+            flex-direction: row-reverse;
+            .top,
+            .bottom {
+                width: 50%;
+            }
+
+            .bottom {
+                justify-content: space-between;
+                padding: 3rem;
+
+                .text {
+                    h1 {
+                        font-size: 3.5rem;
+                    }
+                    .paragraphs {
+                        display: flex;
+                        gap: 2rem;
+
+                        p {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        section.view4 {
+            flex-direction: row;
+            .top,
+            .bottom {
+                width: 50%;
+            }
+
+            .bottom {
+                padding: 3rem;
+                justify-content: space-between;
+
+                .text {
+                    h1 {
+                        font-size: 3.5rem;
+                    }
+                    .paragraphs {
+                        display: flex;
+                        gap: 2rem;
+
+                        p {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        section.view5 {
+            .top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                button {
+                    display: block;
+                    background-color: transparent;
+                    color: white;
+                    border: none;
+                    outline: none;
+                    @include flex-center(1rem);
+                    text-transform: uppercase;
+
+                    .icon {
+                        padding: 0.5rem;
+                        border: 1px solid rgba(178, 176, 176, 0.519);
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            .bottom {
+                flex-direction: row;
             }
         }
     }
