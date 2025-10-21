@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@font-face {
+    font-family: chillax-b;
+    src: url(./fonts/Chillax-Bold.otf);
+}
+@font-face {
+    font-family: chillax-sb;
+    src: url(./fonts/Chillax-Semibold.otf);
+}
+@font-face {
+    font-family: chillax-md;
+    src: url(./fonts/Chillax-Medium.otf);
+}
+@font-face {
+    font-family: chillax-rg;
+    src: url(./fonts/Chillax-Regular.otf);
+}
+@font-face {
+    font-family: chillax-lt;
+    src: url(./fonts/Chillax-Light.otf);
+}
+@font-face {
+    font-family: chillax-el;
+    src: url(./fonts/Chillax-Extralight.otf);
+}
+
+@font-face {
+    font-family: satoshi-lt;
+    src: url(./fonts/Satoshi-Light.otf);
+}
+
+.roboto {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #121212;
+}
+
+html {
+    font-family: chillax-rg, sans-serif;
+    color: rgb(242, 242, 242);
+    font-size: clamp(14px, 1vw, 18px);
+}
+
+@mixin flex-column($gap: 0) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+section {
+  max-width: 1600px;
+}
+
+main {
+    width: 100%;
+    @include flex-column();
+    align-items: center;
+
+    section.view1 {
+        width: 100%;
+        @include flex-column(1rem);
+        padding: 1rem;
+
+        .top {
+            width: 100%;
+
+            img {
+                width: 100%;
+                border-radius: 0.7rem;
+            }
+        }
+
+        .bottom {
+            @include flex-column(3rem);
+            background-color: #1e1e1e;
+            width: 100%;
+            border-radius: 0.7rem;
+            padding: 1.5rem;
+            p:first-child {
+                text-transform: uppercase;
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                gap: 0.7rem;
+
+                h1 {
+                    font-weight: 200;
+                    font-size: 2.5rem;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    font-weight: 200;
+                    opacity: 0.6;
+                    line-height: 1.5;
+                    font-size: 1.5rem;
+                    font-family: satoshi-lt;
+                }
+
+                button {
+                    width: fit-content;
+                    border: none;
+                    outline: none;
+                    padding: 0.7rem 1rem;
+                    border-radius: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    main {
+        section.view1 {
+            flex-direction: row;
+            padding: 1rem;
+
+            .top,
+            .bottom {
+                width: 50%;
+            }
+
+            .bottom {
+                justify-content: space-between;
+                padding: 3rem;
+                gap: 1.5rem;
+
+                .text {
+                    h1 {
+                        font-size: 4rem;
+                    }
+
+                    p {
+                      font-size: 1.3rem;
+                      width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
