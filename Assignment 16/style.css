@@ -4,40 +4,44 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   background-color: #121212;
   color: white;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+html {
+  font-size: clamp(15px, 4vw, 100px);
+}
 
-body, #center {
+body {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0;
 }
-
-#center {
-  flex-direction: column;
+body #center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
+  flex-direction: column;
 }
-
-#center h1 {
+body #center h1 {
   font-size: 3rem;
 }
-
-button {
+body #center button {
   all: unset;
   border: 1px solid white;
-  padding: 0.5rem 1rem;
   border-radius: 1rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   transition: all ease 0.3s;
 }
-
-button:hover {
+body #center button:hover {
   background-color: #fff;
   color: black;
-}
+}/*# sourceMappingURL=style.css.map */
