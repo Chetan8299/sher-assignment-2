@@ -34,6 +34,7 @@ body {
 
         h1 {
             font-size: 3rem;
+            transition: all ease 0.5s;
         }
 
         button {
@@ -43,6 +44,7 @@ body {
             padding: 0.5rem 1rem;
             cursor: pointer;
             transition: all ease 0.3s;
+            user-select: none;
         }
 
         button:hover {

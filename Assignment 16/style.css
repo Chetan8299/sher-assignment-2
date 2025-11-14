@@ -32,6 +32,7 @@ body #center {
 }
 body #center h1 {
   font-size: 3rem;
+  transition: all ease 0.5s;
 }
 body #center button {
   all: unset;
@@ -40,6 +41,9 @@ body #center button {
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: all ease 0.3s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 body #center button:hover {
   background-color: #fff;
