@@ -20,6 +20,7 @@ main {
     color: white;
     background-color: #000;
     transition: all ease-in 0.4s;
+    user-select: none;
 }
 
 button {
