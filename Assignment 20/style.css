@@ -50,7 +50,7 @@ img {
   opacity: 0;
   transform:  translate(-50%, -50%) scale(0) rotate(-60deg) ;
   font-size: 2.5rem;
-  transition: all ease 0.3s;
+  transition: all cubic-bezier(.78,.76,.53,1.37) 0.3s;
   background-image: url(https://imgs.search.brave.com/x2cexXiPB73afIZlhMunKsx5lFNya_N0NYQ01s2lK-8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI0/OTcwMjkxNy92ZWN0/b3Ivc21vb3RoLWJs/dXJyZWQtZ3JhZGll/bnQtaW5zdGEtYmFj/a2dyb3VuZC13YWxs/cGFwZXItc3R5bGUt/c2NhbGFibGUtdmVj/dG9yLW1lc2gtYnJp/Z2h0LmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz0ydHo5cDFG/azF4RXM1MXBTUlVx/dFpUQ1Qzb3RxaXRa/MXhCT1RZUndQTzlR/PQ);
   background-clip: text;
   background-size: contain;
